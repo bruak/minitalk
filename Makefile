@@ -4,8 +4,11 @@ OBJECTS = $(SOURCES:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-all: server client
+GREEN = \033[0;32m
+NC = \033[0m
 
+all: server client
+	@echo -e "$(GREEN)\033[1mmake success!!!$(NC)"
 
 server: server.o libft
 	$(CC) -o $@ $< -Llibft -lft
